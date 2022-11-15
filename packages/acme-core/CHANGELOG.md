@@ -1,5 +1,11 @@
 # @acme/core
 
+## 0.4.0
+
+### Minor Changes
+
+- 274c96b: add github workflow
+
 ## 0.3.0
 
 ### Minor Changes
