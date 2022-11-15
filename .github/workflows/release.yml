@@ -31,7 +31,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn
 
       - name: Create release Pull Request or publish to NPM
         id: changesets
