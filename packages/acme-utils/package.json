@@ -4,7 +4,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "author": "Suhael",
+  "author": "Tony",
   "sideEffects": false,
   "license": "MIT",
   "files": [
