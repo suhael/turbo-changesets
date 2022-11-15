@@ -1,0 +1,41 @@
+name: Create Changesets
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+on: workflow_dispatch
+
+# on:
+#   pull_request:
+#     types: [opened]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Create Changesets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Create empty changesets
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: yarn changeset add --empty
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
