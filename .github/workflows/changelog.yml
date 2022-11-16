@@ -28,3 +28,4 @@ jobs:
 
       - name: Check for Changeset
         run: npx @changesets/cli status --since="origin/main"
+        if: always()
