@@ -1,5 +1,11 @@
 # @acme/core
 
+## 0.5.0
+
+### Minor Changes
+
+- 7c2b757: update core author
+
 ## 0.4.0
 
 ### Minor Changes
